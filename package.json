@@ -1,14 +1,14 @@
 {
-  "name": "js-template",
+  "name": "celestial-bodies",
   "version": "0.1.0",
-  "description": "javascript npm package template",
+  "description": "package for various calculations related to celestial bodies",
   "main": "index.js",
   "scripts": {
     "test": "jest"
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/brandon-sexton/js-template.git"
+    "url": "git+https://github.com/brandon-sexton/celestial-bodies.git"
   },
   "keywords": [
     "javascript",
@@ -19,9 +19,9 @@
   "author": "Brandon Sexton",
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/brandon-sexton/js-template/issues"
+    "url": "https://github.com/brandon-sexton/celestial-bodies/issues"
   },
-  "homepage": "https://github.com/brandon-sexton/js-template#readme",
+  "homepage": "https://github.com/brandon-sexton/celestial-bodies#readme",
   "devDependencies": {
     "@babel/preset-env": "^7.23.7",
     "eslint": "^8.56.0",
