@@ -1,6 +1,7 @@
-export const W_PLUS_W = 4.935239984568769;
-export const COS_OBLIQUITY = 0.9174820620691818;
-export const SIN_OBLIQUITY = 0.3977771559319137;
+export const EARTH_MU = 3.986004418e5;
 export const SUN_MU = 1.327124400419e11;
+export const MOON_MU = 4902.800066;
+export const EARTH_RADIUS = 6378.137;
+export const EARTH_FLATTENING = 1 / 298.257223563;
+export const EARTH_ROTATION_RATE = 7.292115e-5;
 export const SUN_P = 4.56e-6;
-export const OBLIQUITY_OF_ECLIPTIC = 0.4091051766674715;

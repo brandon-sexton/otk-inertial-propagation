@@ -1,5 +1,5 @@
 {
-  "name": "js-template",
+  "name": "orbit-propagation",
   "version": "0.1.0",
   "description": "template package",
   "main": "index.js",
@@ -8,7 +8,7 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/brandon-sexton/js-template.git"
+    "url": "git+https://github.com/brandon-sexton/orbit-propagation.git"
   },
   "keywords": [
     "javascript",
@@ -19,9 +19,9 @@
   "author": "Brandon Sexton",
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/brandon-sexton/js-template/issues"
+    "url": "https://github.com/brandon-sexton/orbit-propagation/issues"
   },
-  "homepage": "https://github.com/brandon-sexton/js-template#readme",
+  "homepage": "https://github.com/brandon-sexton/orbit-propagation#readme",
   "devDependencies": {
     "@babel/preset-env": "^7.23.7",
     "babel-jest": "^29.7.0",
@@ -30,5 +30,10 @@
     "jest": "^29.7.0"
   },
   "dependencies": {
+    "celestial-body-positions": "^0.1.1",
+    "openspace-coordinates": "^0.1.1",
+    "time-systems": "^0.1.4",
+    "unit-conversions-js": "^0.3.1",
+    "vector-matrix-math": "^0.1.4"
   }
 }
