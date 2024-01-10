@@ -1,7 +1,6 @@
 import {SECONDS_TO_DAYS, DAYS_TO_SECONDS} from 'time-systems';
 import {OrbitState} from './orbit-state';
-import {ForceModelConfigs} from './force-model-configs';
-import {getAcceleration} from './perturbations';
+import {ForceModel} from './force-model';
 
 const ONE_SIXTH = 1/6;
 
@@ -20,7 +19,7 @@ export class InertialPropagator {
    */
   constructor(y0) {
     this.y0 = y0;
-    this.forceModelConfigs = new ForceModelConfigs();
+    this.forceModelConfigs = new ForceModel();
     this.stepSize = this.MAX_STEP;
   }
 
@@ -36,25 +35,25 @@ export class InertialPropagator {
     const dsecs = h * .5;
     const ddays = dsecs * SECONDS_TO_DAYS;
 
-    const k1 = new OrbitStateDerivative(this.y0, this.forceModelConfigs);
+    const k1 = getOrbitStateDerivative(this.y0, this.forceModelConfigs);
     const t1 = this.y0.t0.plusDays(ddays);
     const r1 = this.y0.r0.plus(k1.v0.scale(dsecs));
     const v1 = this.y0.v0.plus(k1.a0.scale(dsecs));
     const y1 = new OrbitState(t1, r1, v1);
 
-    const k2 = new OrbitStateDerivative(y1, this.forceModelConfigs);
+    const k2 = getOrbitStateDerivative(y1, this.forceModelConfigs);
     const t2 = t1.copy();
     const r2 = this.y0.r0.plus(k2.v0.scale(dsecs));
     const v2 = this.y0.v0.plus(k2.a0.scale(dsecs));
     const y2 = new OrbitState(t2, r2, v2);
 
-    const k3 = new OrbitStateDerivative(y2, this.forceModelConfigs);
+    const k3 = getOrbitStateDerivative(y2, this.forceModelConfigs);
     const t3 = t1.plusDays(ddays);
     const r3 = this.y0.r0.plus(k3.v0.scale(h));
     const v3 = this.y0.v0.plus(k3.a0.scale(h));
     const y3 = new OrbitState(t3, r3, v3);
 
-    const k4 = new OrbitStateDerivative(y3, this.forceModelConfigs);
+    const k4 = getOrbitStateDerivative(y3, this.forceModelConfigs);
 
     const dv = k1.v0.plus(
         k2.v0.scale(2)).plus(k3.v0.scale(2)).plus(k4.v0)
@@ -94,20 +93,16 @@ export class InertialPropagator {
 }
 
 /**
- * @class OrbitStateDerivative
- * @description Represents the derivative of an orbit state.
+ * @function getOrbitStateDerivative
+ * @description Gets the derivative of the orbit state.
+ * @private
+ * @param {OrbitState} state - Orbit state.
+ * @param {ForceModel} forceModel - Force model.
+ * @return {object} Orbit state derivative.
  */
-class OrbitStateDerivative {
-  /**
-   * @constructor
-   * @param {OrbitState} state - Orbit state.
-   * @param {ForceModelConfigs} forceModelConfigs - Force model configurations.
-   * @example
-   * const derivative = new OrbitStateDerivative(state, forceModelConfigs);
-   */
-  constructor(state, forceModelConfigs) {
-    this.t0 = state.t0.copy();
-    this.v0 = state.v0.copy();
-    this.a0 = getAcceleration(state.t0, state.r0, forceModelConfigs);
-  }
+function getOrbitStateDerivative(state, forceModel) {
+  const t0 = state.t0.copy();
+  const v0 = state.v0.copy();
+  const a0 = forceModel.getAcceleration(state.t0, state.r0);
+  return {t0, v0, a0};
 }

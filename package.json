@@ -1,27 +1,36 @@
 {
-  "name": "orbit-propagation",
+  "name": "otk-inertial-propagation",
   "version": "0.1.0",
-  "description": "template package",
+  "description": "Package used to propagate orbit states in the inertial frame",
   "main": "index.js",
   "scripts": {
     "test": "jest"
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/brandon-sexton/orbit-propagation.git"
+    "url": "git+https://github.com/brandon-sexton/otk-inertial-propagation.git"
   },
   "keywords": [
     "javascript",
-    "npm",
-    "package",
-    "template"
+    "astrodynamics",
+    "orbit",
+    "propagation",
+    "inertial",
+    "ephemeris",
+    "satellite",
+    "spacecraft",
+    "rk4",
+    "runge-kutta",
+    "runge",
+    "kutta",
+    "kepler"
   ],
   "author": "Brandon Sexton",
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/brandon-sexton/orbit-propagation/issues"
+    "url": "https://github.com/brandon-sexton/otk-inertial-propagation/issues"
   },
-  "homepage": "https://github.com/brandon-sexton/orbit-propagation#readme",
+  "homepage": "https://github.com/brandon-sexton/otk-inertial-propagation#readme",
   "devDependencies": {
     "@babel/preset-env": "^7.23.7",
     "babel-jest": "^29.7.0",

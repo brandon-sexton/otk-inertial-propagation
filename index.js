@@ -1,1 +1,1 @@
-// add exports here to make them available to other files
+export {InertialPropagator} from './src/inertial-propagator.js';
