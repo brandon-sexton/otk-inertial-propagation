@@ -1,4 +1,4 @@
-import {SECONDS_TO_DAYS, DAYS_TO_SECONDS} from 'time-systems';
+import {SECONDS_TO_DAYS, DAYS_TO_SECONDS} from 'otk-time-systems';
 import {OrbitState} from './orbit-state';
 import {ForceModel} from './force-model';
 

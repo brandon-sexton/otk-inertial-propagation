@@ -1,10 +1,10 @@
-import {getSunPosition, getMoonPosition} from 'celestial-body-positions';
+import {getSunPosition, getMoonPosition} from 'otk-celestial-bodies';
 import {
   getSphericalFromCartesian,
   getFixedFromInertial,
   getInertialFromFixed,
-} from 'openspace-coordinates';
-import {Vector} from 'vector-matrix-math';
+} from 'otk-coordinate-transforms';
+import {Vector} from 'otk-linear-algebra';
 
 /**
  * @class ForceModelConfigs

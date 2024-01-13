@@ -1,5 +1,5 @@
-import {Vector} from 'vector-matrix-math';
-import {Epoch} from 'time-systems';
+import {Vector} from 'otk-linear-algebra';
+import {Epoch} from 'otk-time-systems';
 import {OrbitState} from '../src/orbit-state';
 import {InertialPropagator} from '../src/inertial-propagator';
 

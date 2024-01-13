@@ -39,10 +39,10 @@
     "jest": "^29.7.0"
   },
   "dependencies": {
-    "celestial-body-positions": "^0.1.1",
-    "openspace-coordinates": "^0.1.1",
-    "time-systems": "^0.1.4",
-    "unit-conversions-js": "^0.3.1",
-    "vector-matrix-math": "^0.1.4"
+    "otk-celestial-bodies": "^0.1.0",
+    "otk-coordinate-transforms": "^0.1.0",
+    "otk-time-systems": "^0.1.0",
+    "otk-unit-conversions": "^0.1.0",
+    "otk-linear-algebra": "^0.1.0"
   }
 }
